@@ -2291,7 +2291,7 @@ class H5PCore {
       $this->h5pF->deleteLibraryUsage($content['id']);
       $this->h5pF->saveLibraryUsage($content['id'], $content['dependencies']);
 
-      if (!$content['slug']) {
+      if (!isset($content['slug']) || !$content['slug']) {
         $content['slug'] = $this->generateContentSlug($content);
 
         // Remove old export file
